@@ -1,0 +1,8 @@
+.wrapper {
+    display: flex;
+
+    main {
+        // Faz com que o elemento ocupe o maximo de espaco que tiver disponivel
+        flex: 1;
+    }
+}

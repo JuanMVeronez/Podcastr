@@ -1,0 +1,137 @@
+.playerContainer {
+    padding: 3rem 4rem;
+    width: 26.5rem;
+    height: 100vh; //100% da view
+
+    background-color: var(--purple-500);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    header{
+        display: flex;
+        align-items: center;
+        gap: 1rem; //Comando novo que determina um espaçamento global entre os itens FLEX ou GRID que estao dentro do header
+    }
+
+    strong{
+        font-family: Lexend, sans-serif;
+        font-weight: 600;
+    }
+
+    footer {
+        align-self: stretch; //Fara com que o footer ocupe a largura toda e não tente ocupar só o centro
+
+        &.empty{
+            opacity: 0.5;
+        }
+    }
+}
+
+.currentEpisode {
+    text-align: center;
+
+    img {
+        border-radius: 1.5rem;
+    }
+
+    strong {
+        display: block;
+        margin-top: 2rem;
+        font: 600 1.5rem Lexend, sans-serif;
+        line-height: 1.75rem;
+    }
+
+    span {
+        display: block;
+        margin-top: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+.emptyPlayer {
+    width: 100%;
+    height: 20rem;
+    border: 1.5px dashed var(--purple-300);
+    border-radius: 1.5rem;
+    background: linear-gradient(143.8deg, rgba(145, 100, 250, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    
+    padding: 4rem;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem
+
+    span {
+        display: inline-block;
+        width: 4rem;
+        text-align: center;
+    }
+    .slider {
+        flex: 1;
+
+        .emptySlider {
+            opacity: 0.6;
+            width: 100%;
+            height: 4px;
+            background-color: var(--purple-300);
+            border-radius: 2px
+        }
+    }
+    
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+
+    button {
+        background: transparent;
+        border: 0;
+        font-size: 0; //faz com que a imagem do button fique centralizado, pois normalmente tentaria alinhar com o texto
+
+        &:disabled {
+            cursor: default;
+            opacity: 0.6;
+        }
+        
+        &:hover:not(:disabled) {
+            filter: brightness(0.6);
+        }
+
+        &.isActive {
+            filter: invert(0.35) sapia(1) saturate(3) hue-rotate(100deg);
+        }
+
+        &.isActive {
+            filter: brightness(0.6) invert(0.35) sapia(1) saturate(3) hue-rotate(100deg);
+        }
+
+        &.playButton {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            background-color: var(--purple-400);
+
+            transition: filter 0.2s;
+
+            &:hover:enabled {
+                filter: brightness(0.95);
+            }
+        }
+    }
+}
